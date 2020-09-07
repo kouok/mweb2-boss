@@ -366,7 +366,7 @@ export default {
             bt[c].onmouseout=null;
           }
           for (let c = 0; c < con.length; c++) {
-            con[c].onmousemove=null;
+            con[c].onmousemove=null; 
             con[c].onmouseout=null;
           }
           // logo.src="../assets/logo_index.png"
