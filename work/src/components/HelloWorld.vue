@@ -35,13 +35,21 @@
           </div>
         </div>
         <div class="jg"></div>
-        <div class="he">
+        <div class="he" @mousemove="sele()" @mouseout="seleout()">
           <div class="icon">
             <span class="iconfont icon-wode"></span>
           </div>
           <div class="test">
             <span>欢迎您:</span>
             <span>snto</span>
+            <div id="sele" style="display: none;"  @mousemove="sele()" @mouseout="seleout()">
+              <div class = "sele">
+                <span>个人资料</span>
+                <span>组织资料</span>
+                <span>权限分配</span>
+                <span>用户管理</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="fl">
@@ -61,21 +69,23 @@
             <span class="iconfont icon-navicon" ></span>
           </div>
         </div>
-        <div class="dh1" v-for="(itme,i) in msg" :key="i">
+        <div class="dh1" v-for="(itme,index) in msg" :key="index">
           <div class="bt">
             <div class="icon">
               <span class="iconfont icon-xiajiantou"></span>
             </div>
+            <div id="mu" class="mu" style="display:none">{{itme.name}}</div>
             <div class="test">
               <span>{{itme.name}}</span>
             </div>
           </div>
           <ul>
             <li v-for="(it,i) in itme.lr" :key="i">
-              <div class="con" :class="{action:it.checked==true}">
+              <div class="con" :class="{action:it.checked==true}" ref="con">
                 <div class="icon">
                   <span class="iconfont" :class="it.icon"></span>
                 </div>
+                <div id="mu" class="mu" style="display:none">{{it.name}}</div>
                 <div class="test">
                   <span>{{it.name}}</span>
                 </div>
@@ -286,14 +296,53 @@ export default {
     };
   },
   methods:{
+    bt(i){
+      // var bt = "bt"+i.i;
+      this.$refs.bt[i.i].children[1].display="block";
+      // obj..style.display="block";
+      console.log(i)
+    },
+    btout(t){
+      // obj.lastElementChild[1].style.display="none"
+
+    },
+    sele(){
+      var test = document.querySelector('#sele');
+      test.style.display="block"
+    },
+    seleout(){
+      var test = document.querySelector('#sele');
+      test.style.display="none"
+    },
     daohan(){
+      function removeEventListener(element,type,fn) {
+	if(element.removeEventListener) {       //如果支持removeEventListener方法
+		element.removeEventListener(type,fn,false);
+	} else if(element.detachEvent) {        //如果支持detachEvent方法
+		element.detachEvent("on"+type,fn);
+	} else {                                //以上两种方法都不支持
+		element["on"+type]=null; 
+	}
+}
       var test = document.querySelectorAll('.bt .test');
       var test2 = document.querySelectorAll('.con .test');
       var test3 = document.querySelector('.contents');
       var test4 = document.querySelector('.top .right');
       var logo = document.querySelectorAll('#logo');
-      // console.log(test)
-      console.log(test4)
+      var sele = document.querySelector('#sele .sele');
+      var bt = document.querySelectorAll('.bt');
+      var con = document.querySelectorAll('.con');
+      // console.log(sele)
+      // console.log(test4)
+      function move() {
+        this.children[1].style.display="block";
+      }
+      function out() {
+        this.children[1].style.display="none";
+      }
+      // function cmove() {
+      //         this.children[1].style.display="block";
+      // }
       for (let i = 0; i < test.length; i++) {
         if (test[i].style.display==="none") {
           test[i].style.display="block";  
@@ -310,6 +359,16 @@ export default {
           test4.style.flex="8";
           logo[1].style.display="none";
           logo[0].style.display="block";
+          sele.style.width="165px";
+          sele.style.right="162px";
+          for (let c = 0; c < bt.length; c++) {
+            bt[c].onmousemove=null;
+            bt[c].onmouseout=null;
+          }
+          for (let c = 0; c < con.length; c++) {
+            con[c].onmousemove=null;
+            con[c].onmouseout=null;
+          }
           // logo.src="../assets/logo_index.png"
         }else{
           test2[i].style.display="none";   
@@ -317,13 +376,24 @@ export default {
           test4.style.flex="18" 
           logo[0].style.display="none"; 
           logo[1].style.display="block"; 
+          sele.style.width="173px";
+          sele.style.right="172px";
+          for (let c = 0; c < bt.length; c++) {
+            bt[c].onmousemove=move;
+            bt[c].onmouseout=out;
+          }
+          for (let c = 0; c < con.length; c++) {
+            con[c].onmousemove=move;
+            con[c].onmouseout=out;
+          }
         }  
       }
       
       
       // test.style.display="none";
       // test2.style.display="none";
-    }
+    },
+    
   }
 };
 // console.log(navigation.dh);
@@ -333,6 +403,36 @@ export default {
 
 <style scoped>
 @import "../font/iconfont.css";
+.mu{
+  background-color: #ff9901;
+  width: 120px;
+  /* height: 30px; */
+  /* display: none; */
+  position: absolute;
+  text-align: center;
+  left: 80px;
+  box-sizing: border-box;
+  padding: 4px;
+}
+.sele{
+  z-index: 100;
+  width: 165px;
+  height: 200px;
+  position: absolute;
+  right: 162px;
+  top: 66px;
+  background-color: #fff;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #80ceda;
+  border-top:none;
+  box-sizing: border-box;
+  padding:20px 20px;
+  font-size: 18px;
+  color: #000;
+}
 .con-content-data .con-content-data-operation{
   height: 80px;
   
