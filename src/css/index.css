@@ -1,0 +1,363 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+#index{
+    width: 100%;
+    display: flex;
+}
+/* 左边导航栏 */
+.left{
+    width: 15%;
+}
+.left>div>.logo{
+    display: flex;
+    height: 13px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 5px;
+    background-color: #0084B5;
+}
+.left>div>.logo>span:first-child{
+    font-size: 6px;
+    padding-left: 1px;
+    margin-right: 2px;
+}
+.left>div>div{
+    padding: 2px;
+    background-color: #22282E;
+}
+.left>div>.zd{
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4px;
+    background-color: #394253;
+}
+.left>div>.zd>span:first-child{
+    font-size: 4px;
+    margin-right: 2px;
+    padding-left: 1px;
+    /* margin-left: 2px; */
+}
+.left>div>div>p{
+    display: flex;
+    /* justify-content: center; */
+    font-size: 3px;
+    align-items: center;
+    color: white;
+}
+.left>div>div>p>span:first-child{
+    font-size: 6px;
+    margin-right: 2px;
+    /* margin-left: 2px; */
+}
+
+.left>div>ul>li{
+    padding: 2px;
+    font-size: 2px;
+    color: white;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    position: relative;
+}
+.left>div>ul>li>span:first-child{
+    font-size: 4px;
+    margin-right: 3px;
+    margin-left: 1px;
+}
+.left>div>ul>li>p{
+    padding: 2px;
+    background-color: darkorange;
+    position: absolute;
+    right: -16px;
+    border-radius: 2px;
+    display: none;
+}
+
+.left>div>ul{
+    background-color: #293239;
+}
+/* 浮动高亮 */
+.left>div>ul>.active{
+    background-color: #009ACC;
+}
+/* 提示文字 */
+.left>div>ul>li>.dpl{
+    display: block;
+}
+
+/* 右边内容 */
+.right{
+    width: 85%;
+    background-color: white;
+}
+/* 头部 */
+.right>.rig_top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #009ACC;
+    position: relative;
+}
+.right>.rig_top>ul{
+    display: flex;
+    font-size: 2px;
+}
+.right>.rig_top>ul>.yun{
+    font-size: 3px;
+}
+.right>.rig_top>ul>li{
+    padding: 3px 5px;
+    color: white;
+    height: 13px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.right>.rig_top>ul>.active{
+    background-color: #0084B5;
+}
+.right>.rig_top>ul>.hy{
+    border-left: 0.1px solid #0086B8;
+     border-right: 0.1px solid #0086B8;
+}
+.right>.rig_top>div{
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    font-size: 3px;
+    background-color: white;
+    border: 0.1px solid #0086B8;
+}
+.right>.rig_top>div>div{
+    padding: 2px 6px;
+}
+.right>.rig_top>div>div:hover{
+    background-color: #0084B5;
+    color: white;
+}
+
+/* 内容 */
+.right>.rig_con{
+    padding-left: 3px;
+}
+
+/* 路径显示 */
+.right>.rig_con>.lj{
+    width: 100%;
+    padding: 3px 3px 3px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.right>.rig_con>.lj>p{
+    font-size: 2px;
+}
+.right>.rig_con>.lj>ul{
+    display: flex;
+    font-size: 3px;
+}
+.right>.rig_con>.lj>ul>li{
+    color: white;
+    padding: 1px 2px;
+    background-color: #53637C;
+    margin: 0 0.5px;
+    border-radius: 1px;
+}
+
+/* 导航 */
+.right>.rig_con>.dh{
+    width: 100%;
+    background-color: #009ACC;
+    font-size: 3px;
+    padding-top: 2px;
+    padding-left: 4px;
+    color: white;
+}
+.right>.rig_con>.dh>ul{
+    display: flex;
+}
+.right>.rig_con>.dh>ul>li{
+    padding: 1px 2px;
+}
+/* 悬浮效果 */
+.right>.rig_con>.dh>ul>li:hover{
+    background-color: white;
+    color: #333333;
+}
+.right>.rig_con>.dh>ul>.active{
+    background-color: white;
+    color: #333333;
+}
+
+/* 操作 */
+.right>.rig_con>.cz{
+    width: 100%;
+    padding: 3px 0px;
+    font-size: 3px;
+}
+.right>.rig_con>.cz>select{
+   font-size: 3px;
+   border: 0.1px solid lightgray;
+       appearance: none; /* 去掉默认图标 */
+       -moz-appearance: none; /* Firefox */
+       -webkit-appearance: none; /* Safari and Chrome */
+       padding:1px 5px 1px 1px;
+       background: url("未标题-1.png") no-repeat scroll right center transparent ;/* 自己的图*/
+       background-size: 2px;
+       border:0.1px solid #b3b3b3;
+       outline: none;
+}
+.right>.rig_con>.cz>button{
+    font-size: 3px;
+    outline: none;
+    border: 0;
+    background-color: #E6E6E6;
+    padding: 1px 2px;
+    border-radius: 1px;
+    margin-left: 2px;
+}
+.right>.rig_con>.cz>.active{
+    background-color: #009ACC;
+    color: white;
+}
+
+/* 选择 */
+.right>.rig_con>.xz{
+    width: 100%;
+    font-size: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F3F3F5;
+    padding: 3px;
+}
+.right>.rig_con>.xz>select{
+    width: 25px;
+   font-size: 2px;
+   border: 0.1px solid lightgray;
+   appearance: none; /* 去掉默认图标 */
+   -moz-appearance: none; /* Firefox */
+   -webkit-appearance: none; /* Safari and Chrome */
+   padding:1px 5px 1px 1px;
+   background: url("未标题-1.png") no-repeat scroll right center transparent ;/* 自己的图*/
+   background-size: 2px;
+   border:0.1px solid #b3b3b3;
+   outline: none;
+   margin: 1px;
+   background-color: white;
+}
+.right>.rig_con>.xz>button{
+    width: 15px;
+    font-size: 2px;
+    outline: none;
+    border: 0;
+    background-color: #53637C;
+    color: white;
+    padding: 1px 2px;
+    border-radius: 1px;
+    margin-left: 2px;
+    margin: 1px;
+}
+.right>.rig_con>.xz>input{
+    border: 0.1px solid lightgray;
+    margin: 1px;
+    background-color: white;
+    padding: 1px 2px;
+    width: 25px;
+    font-size: 2px;
+    outline: none;
+}
+
+/* 内容 */
+.right>.rig_con>table{
+    margin-top: 3px;
+    width: 100%;
+    font-size: 3px;
+    text-align: center;
+    color: #333333;
+}
+.right>.rig_con>table tr:first-child{
+    background-color: #F3F3F5;
+}
+.right>.rig_con>table tr>td{
+    border-bottom: 0.1px solid lightgray;
+    padding: 2px 0;
+}
+.right>.rig_con>table tr>td>span{
+   color: red;
+}
+.right>.rig_con>table tr>td:first-child{
+    color: #0066CF;
+}
+.right>.rig_con>table tr:first-child>td{
+    border-top: 0.1px solid lightgray;
+    color: #333333;
+}
+.right>.rig_con>table tr>.td:first-child{
+    padding: 4px 0;
+    color: #333333;
+}
+.right>.rig_con>table tr>.td>div{
+    display: flex;
+    justify-content: center;
+}
+.right>.rig_con>table tr>.td>div>button{
+    outline: none;
+    font-size: 3px;
+    border: 0.1px solid lightgray;
+    margin: 0 1px;
+    padding: 0 2px;
+    background-color: white;
+}
+/* 悬浮效果 */
+.right>.rig_con>table tr>.td>div>button:hover{
+    background-color: #009ACC;
+    color: white;
+}
+.right>.rig_con>table tr>.td>div>ul{
+    display: flex;
+}
+.right>.rig_con>table tr>.td>div>ul>li{
+    border: 0.1px solid lightgray;
+    padding: 1px 3px;
+    margin: 0 1px;
+}
+/* 悬浮效果 */
+.right>.rig_con>table tr>.td>div>ul>li:hover{
+    background-color: #009ACC;
+    color: white;
+}
+.right>.rig_con>table tr>.td>div>ul>.active{
+    background-color: #009ACC;
+    color: white;
+}
+.right>.rig_con>table tr>.td>div>.p{
+    padding-top: 1.5px;
+    margin: 0 1px;
+}
+.right>.rig_con>table tr>.td>div>p{
+    padding-top: 0.1px;
+}
+.right>.rig_con>table tr>.td>div input{
+    border: 0.1px solid lightgray;
+    margin: 1px;
+    background-color: white;
+    padding: 1px 1px;
+    width: 10px;
+    font-size: 2px;
+    outline: none;
+}
+
+.right>p{
+    text-align: center;
+    font-size: 5px;
+    color: #333333;
+}
