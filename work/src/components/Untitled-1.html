@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.2.6.11.js"></script>
+</head>
+<body>
+    <ul id="app">
+        <li v-for="person,index in persons" v-if="index<2" :key="person.id">
+            {{ person.name }}
+        </li>
+    </ul>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                persons: [{
+                    name: '刘诗诗',
+                    age: 18,
+                    isActive: true
+                },
+                {
+                    name: '赵丽颖',
+                    age: 20,
+                    isActive: false
+                },
+                {
+                    name: '李沁',
+                    age: 22,
+                    isActive: false
+                },
+                {
+                    name: '杨幂',
+                    age: 88,
+                    isActive: true
+                },
+                ],
+                activePersons: []
+            }
+        })
+        vm.activePersons = vm.persons.filter(item => item.isActive);
+    </script>
+    </script>
+</body>
+</html>
