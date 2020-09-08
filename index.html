@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人管理</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="font/font_2038283_tp32wl4dnqq/iconfont.css" />
+	</head>
+
+	<body>
+		<div id="app">
+			<!-- 导航 -->
+	<div class="top">
+	<div class="t-l">
+		<img src="imags/logo.png">
+	</div>
+	<div class="t-r">
+	<div class="t-r-l">
+	<a>云服务管理平台</a>
+	<a>
+		<span class="iconfont">&#xe61e;</span>WORKSHOP<br>个人工作台
+	</a>
+	<a class="active">
+		<span class="iconfont">&#xe663;</span>BOSS<br>业务运营支持
+	</a>
+	<a>
+		<span class="iconfont">&#xe673;</span>CRM<br>客户管理关系
+	</a>
+	</div>
+	<div class="t-r-r">
+		<a>
+			<span class="iconfont">&#xe65b;</span>欢迎你：snto
+			<ul>
+				<li>个人资料</li>
+				<li>组织架构</li>
+				<li>权限分配</li>
+				<li>用户管理</li>
+			</ul>
+		</a>
+		<a>
+			<span class="iconfont">&#xe6e4;</span>退出登录
+		</a>
+		</div>
+	</div>
+		</div>
+		<!-- 侧边菜单 -->
+		<div class="muen">
+			<button type="button" class="but-z"><span class="iconfont">&#xe67b;</span></button>
+		<ul>
+			<li title="撮合管理" class="u-one"><span class="iconfont">&#xe60b;</span>撮合管理</li>
+			<li title="需求池" class="active"><span class="iconfont">&#xe731;</span>需求池</li>
+			<li title="现货清单"><span class="iconfont">&#xe609;</span>现货清单</li>
+			<li title="录入产品"><span class="iconfont">&#xe632;</span>录入产品</li>
+			<li title="帮用户传EXCEL"><span class="iconfont">&#xe66e;</span>帮用户传EXCEL</li>
+		</ul>
+		<ul>
+			<li title="订单管理" class="u-one"><span class="iconfont">&#xe60b;</span>订单管理</li>
+			<li title="预订单列表"><span class="iconfont">&#xe731;</span>预订单列表</li>
+			<li title="失效预订单"><span class="iconfont">&#xe609;</span>失效预订单</li>
+			<li title="订单列表"><span class="iconfont">&#xe609;</span>订单列表</li>
+			<li title="查看凭证"><span class="iconfont">&#xe632;</span>查看凭证</li>
+			<li title="自营订单列表"><span class="iconfont">&#xe632;</span>自营订单列表</li>
+		</ul>
+			<ul>
+				<li title="统计报表" class="u-one"><span class="iconfont">&#xe60b;</span>统计报表</li>
+				<li title="业务统计"><span class="iconfont">&#xe731;</span>业务统计</li>
+				<li title="客户成单统计"><span class="iconfont">&#xe609;</span>客户成单统计</li>
+				<li title="客户维护统计"><span class="iconfont">&#xe609;</span>客户维护统计</li>
+			</ul>
+		</div>
+		<!-- 信息展示区 -->
+		<div class="content">
+			<div class="c-t">
+				<div class="c-t-l">
+					<a href="#">BOSS</a>&gt;
+					<a href="#">撮合管理</a>&gt;
+					<a>需求池</a>&gt;
+				</div>
+				<div class="c-t-r">
+					<button type="button"><span class="iconfont">&#xe632;</span>录入产品</button>
+					<button type="button"><span class="iconfont">&#xe66e;</span>帮用户传EXCEL</button>
+					<button type="button"><span class="iconfont">&#xe609;</span>订单列表</button>
+					<button type="button"><span class="iconfont">&#xe609;</span>录入客户</button>
+				</div>
+			</div>
+			<!-- 铝箔 铝锭 铝棒选择区 -->
+			<div class="aluminum">
+				<a href="#" class="aitvne">铝箔</a>
+				<a href="#">铝锭</a>
+				<a href="#">铝棒</a>
+				<p class="p-15"></p>
+				<div class="p-16">15</div>
+			</div>
+			<!-- 有效需求区 -->
+			<div class="demand">
+				<select>
+					<option value="有效需求">有效需求</option>
+					<option value="有效需求">有效需求</option>
+					<option value="有效需求">有效需求</option>
+					<option value="有效需求">有效需求</option>
+				</select>
+				<div class="c-t-r">
+					<button type="button" class="aintew" @click="addStudent"><span class="iconfont">&#xe608;</span>新建</button>
+					<button type="button"><span class="iconfont">&#xe61c;</span>编辑</button>
+					<button type="button"><span class="iconfont">&#xe73d;</span>删除</button>
+					<button type="button"><span class="iconfont">&#xe680;</span>最合匹配</button>
+					<button type="button" class="aintew"><span class="iconfont">&#xe6c3;</span>生产预订单</button>
+					<button type="button"><span class="iconfont">&#xe6bc;</span>置为失效</button>
+					<button type="button"><span class="iconfont">&#xe61b;</span>导出</button>
+				</div>
+			</div>
+			<!-- 新增区域 -->
+			<div class="newarea">
+				<div class="newarea-input">
+					<input type="text" placeholder="需求编号" v-model="ReqID">
+					<input type="text" placeholder="公司名称" v-model="company">
+					<input type="text" placeholder="联系人" v-model="contacts">
+					<input type="text" placeholder="手机" v-model="cellphone">
+					<input type="text" placeholder="品名" v-model="commodity">
+					<input type="text" placeholder="牌号" v-model="shop">
+					<input type="text" placeholder="宽度" v-model="breadth">
+					<input type="text" placeholder="厚度" v-model="thickness">
+				</div>
+				<div class="newarea-input">
+					<input type="text" placeholder="价格" v-model="price">
+					<input type="text" placeholder="数量" v-model="count">
+					<select v-model="region">
+						<option value="地区">地区</option>
+					</select>
+					<select v-model="requirement">
+						<option value="需求类型">需求类型</option>
+					</select>
+					<select v-model="clearing">
+						<option value="结算方式">结算方式</option>
+					</select>
+					<select v-model="means">
+						<option value="交易方式">交易方式</option>
+					</select>
+					<select v-model="period">
+						<option value="有效期">有效期</option>
+					</select>
+					<button type="button"><span class="iconfont">&#xe610;</span>搜索</button>
+				</div>
+			</div>
+			<!-- 查看列表 -->
+		<table class="table" width="100%">
+	<thead>
+		<tr>
+			<th>需求编号</th>
+			<th>公司名称</th>
+			<th>联系人</th>
+			<th>手机</th>
+			<th>交易员</th>
+			<th>品名</th>
+			<th>牌名</th>
+			<th>厚度</th>
+			<th>宽度</th>
+			<th>价格</th>
+			<th>数量</th>
+			<th>地区</th>
+			<th>交期</th>
+			<th>发布时间</th>
+			<th>报价</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr v-for="(item, index) in stList" v-if="Math.floor(index/8)+1==cur" :key="index">
+			<td>{{item.ReqID}}</td>
+			<td>{{item.company}}</td>
+			<td>{{item.contacts}}</td>
+			<td>{{item.cellphone}}</td>
+			<td>{{item.commodity}}</td>
+			<td>{{item.shop}}</td>
+			<td>{{item.breadth}}</td>
+			<td>{{item.thickness}}</td>
+			<td>{{item.price}}</td>
+			<td>{{item.count}}</td>
+			<td>{{item.region}}</td>
+			<td>{{item.requirement}}</td>
+			<td>{{item.clearing}}</td>
+			<td>{{item.means}}</td>
+			<td><span>{{item.period}}</span>条</td>
+		</tr>
+	</tbody>
+		</table>
+
+			<!-- 分页 -->
+			<div class="commonPage">
+				<ul class="ul">
+					<li><button @click="up()">上一页</button></li>
+					<li v-for="item,i in pages.slice(0,3)"><button :class="[{'ativen':cur == i+1}]" @click="ing(i+1)">{{i+1}}</button></li>
+					<li><button @click="down()">下一页</button></li>
+					<li><button @click="end()">尾页</button></li>
+				</ul>
+				<p>共{{pages.length}}页</p>
+				<p>转到第<input type="text" value="" v-model="cur"/>页</p>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.v2.6.1.js"></script>
+</body>
+
+<script>
+	var localData = {
+		get() {
+			return JSON.parse(localStorage.getItem("stList")) || [];
+		},
+		set() {
+			localStorage.setItem("stList", JSON.stringify(vm.stList));
+		}
+	}
+	var vm = new Vue({
+		el: '#app',
+		data: {
+			ReqID: "",
+			company: "",
+			contacts: "",
+			cellphone: "",
+			commodity: "",
+			shop: "",
+			breadth: "",
+			thickness: "",
+			count: "",
+			region: "",
+			requirement: "",
+			clearing: "",
+			means: "",
+			period: "",
+			iconfont: "",
+			price: "",
+			stList: localData.get(),
+			cur: 1
+		},
+	methods: {
+		// 添加
+		ing(i) {
+			this.cur = i;
+		},
+		up() {
+			if (this.cur > 1) {
+				this.cur--;
+			}
+		},
+		down() {
+			if (this.cur < this.pages.length) {
+				this.cur++;
+			}
+		},
+		end() {
+			this.cur = this.pages.length;
+		},
+		addStudent() {
+			function getDatetime() {
+				var now = new Date();
+				var year = now.getFullYear();
+				var month = now.getMonth() + 1;
+				var day = now.getDate();
+				var hh = now.getHours();
+				var mm = now.getMinutes();
+				var ss = now.getSeconds();
+				var clock = year + "-";
+				if (month < 10)
+					clock += "0";
+				clock += month + "-";
+				if (day < 10)
+					clock += "0";
+				clock += day + " ";
+				if (hh < 10)
+					clock += "0";
+				clock += hh + ":";
+				if (mm < 10) clock += '0';
+				clock += mm + ":";
+				if (ss < 10) clock += '0';
+				clock += ss;
+				return clock;
+			}
+			this.stList.push({
+				ReqID: this.ReqID,
+				company: this.company,
+				contacts: this.contacts,
+				cellphone: this.cellphone,
+				commodity: this.commodity,
+				shop: this.shop,
+				breadth: this.breadth,
+				thickness: this.thickness,
+				count: this.count,
+				region: this.region,
+				requirement: this.requirement,
+				clearing: this.clearing,
+				period: this.period,
+				iconfont: this.iconfont,
+				price: this.price,
+				means: getDatetime()
+			});
+			this.means = this.ReqID = this.company = this.contacts = this.cellphone = this.commodity = this.shop = this.breadth =
+				this.thickness =
+				this.count = this.region = this.requirement = this.clearing = this.period = this.iconfont = this.price = "";
+		},
+	},
+		computed: {
+			pages() {
+				const pages = [];
+				this.stList.forEach((item, index) => {
+					const page = Math.floor(index / 8);
+					console.log(page)
+					if (!pages[page]) {
+						pages[page] = [];
+					}
+					pages[page].push(item);
+				});
+				return pages;
+			}
+		},
+		watch: {
+			// 监听stList数组有任何变化，则执行该函数
+			stList: {
+				handler() {
+					localData.set();
+				},
+				deep: true
+			}
+		}
+	})
+</script>
+
+</html>
