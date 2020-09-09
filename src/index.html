@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="index">
+        <!-- 左边导航栏 -->
+        <div class="left">
+            <div>
+                <div class="logo"><span class="iconfont icon-logo"></span><span class="title">慧业网</span></div>
+                <div class="zd"><span class="iconfont icon-htmal5icon35"></span></div>
+                <div class="sel">
+                    <p><span class="iconfont icon-xialasanjiao"></span><span class="title">撮合管理</span></p>
+                </div>
+                <ul style="display: none;">
+                    <li><span class="iconfont icon-guanli"></span><span class="title">现货清单</span><p>提示文字</p></li>
+                    <li><span class="iconfont icon-guanli"></span><span class="title">需求池</span><p>提示文字</p></li>
+                    <li><span class="iconfont icon-guanli"></span><span class="title">录入产品</span><p>提示文字</p></li>
+                    <li><span class="iconfont icon-guanli"></span><span class="title">帮客户传EXCEL</span><p>提示文字</p></li>
+                </ul>
+                <div class="sel">
+                    <p><span class="iconfont icon-xialasanjiao"></span><span class="title">订单管理</span></p>
+                </div>
+                <ul style="display: none;">
+                    <li><span class="iconfont icon-guanli"></span><span class="title">预订单列表</span><p>提示文字</p></li>
+                    <li><span class="iconfont icon-guanli"></span><span class="title">失效预订单</span><p>提示文字</p></li>
+                    <li><span class="iconfont icon-guanli"></span><span class="title">订单列表</span><p>提示文字</p></li>
+                    <li><span class="iconfont icon-guanli"></span><span class="title">查看凭证</span><p>提示文字</p></li>
+                    <li><span class="iconfont icon-guanli"></span><span class="title">自营订单列表</span><p>提示文字</p></li>
+                </ul>
+                <div class="sel">
+                    <p><span class="iconfont icon-xialasanjiao"></span><span class="title">统计报表</span></p>
+                </div>
+                <ul style="display: none;">
+                    <li><span class="iconfont icon-guanli"></span><span class="title">业务统计</span><p>提示文字</p></li>
+                    <li><span class="iconfont icon-guanli"></span><span class="title">客户成单统计</span><p>提示文字</p></li>
+                    <li><span class="iconfont icon-guanli"></span><span class="title">可维护维护统计</span><p>提示文字</p></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 右边内容 -->
+        <div class="right">
+            <!-- 头部 -->
+            <div class="rig_top">
+                <ul>
+                    <li class="yun">云服务管理平台</li>
+                    <li>WORKSHOP<br>个人工作台</li>
+                    <li>BOSS<br>业务运行支持</li>
+                    <li>CRM<br>客户关系管理</li>
+                </ul>
+                <ul>
+                    <li class="hy">欢迎您：snto</li>
+                    <li>退出登录</li>
+                </ul>
+                <div style="display: none;">
+                    <div>个人资料</div>
+                    <div>组织架构</div>
+                    <div>权限分配</div>
+                    <div>用户管理</div>
+                </div>
+            </div>
+            <!-- 路径显示 -->
+            <div class="rig_con">
+                    <div class="lj">
+                    <p><span>BOSS</span> > <span>撮合管理</span> > <span>需求池</span></p>
+                    <ul>
+                        <li>录入产品</li>
+                        <li>帮客户宣传EXCEL</li>
+                        <li>订单列表</li>
+                        <li>录入客户</li>
+                    </ul>
+                </div>
+                
+                <!-- 导航 -->
+                <div class="dh">
+                    <ul>
+                        <li class="active">铝箱</li>
+                        <li>铝锭</li>
+                        <li>铝棒</li>
+                    </ul>
+                </div>
+                <!-- 操作 -->
+                <div class="cz">
+                    <select name="">
+                        <option value="">有效需求</option>
+                    </select>
+                    <button type="button" class="active">新建</button>
+                    <button type="button">编辑</button>
+                    <button type="button">删除</button>
+                    <button type="button">撮合匹配</button>
+                    <button type="button" class="active">生成预订单</button>
+                    <button type="button">置为失效</button>
+                    <button type="button">导出</button>
+                </div>
+                
+                <!-- 选择 -->
+                <div class="xz">
+                    <input type="text" placeholder="需求编号"/>
+                    <input type="text" placeholder="公司名称"/>
+                    <input type="text" placeholder="联系人"/>
+                    <input type="text" placeholder="手机"/>
+                    <input type="text" placeholder="品名"/>
+                    <input type="text" placeholder="牌号"/>
+                    <input type="text" placeholder="宽度"/>
+                    <input type="text" placeholder="厚度"/>
+                    <input type="text" placeholder="价格"/>
+                    <input type="text" placeholder="数量"/>
+                    <select name="">
+                        <option value="">需求类型</option>
+                    </select>
+                    <select name="">
+                        <option value="">结算方式</option>
+                    </select>
+                    <select name="">
+                        <option value="">交易方式</option>
+                    </select>
+                    <select name="">
+                        <option value="">有效期</option>
+                    </select>
+                    <button type="button">搜索</button>
+                </div>
+                
+                <!-- 内容 -->
+                <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>需求编号</td>
+                        <td>公司名称</td>
+                        <td>联系人</td>
+                        <td>手机</td>
+                        <td>交易员</td>
+                        <td>品名</td>
+                        <td>牌号</td>
+                        <td>厚度</td>
+                        <td>宽度</td>
+                        <td>价格</td>
+                        <td>数量</td>
+                        <td>地区</td>
+                        <td>交期</td>
+                        <td>发布时间</td>
+                        <td>报价</td>
+                    </tr>
+                    <tr>
+                        <td>XO10012</td>
+                        <td>河南蓝火实业有限公司</td>
+                        <td>张三</td>
+                        <td>13565658989</td>
+                        <td>邓莹</td>
+                        <td>烟箔</td>
+                        <td>1235</td>
+                        <td>0.007</td>
+                        <td>500</td>
+                        <td>19800</td>
+                        <td>5t</td>
+                        <td>南京</td>
+                        <td>2天</td>
+                        <td>2分钟前</td>
+                        <td><span>3</span>条</td>
+                    </tr>
+                    <tr>
+                        <td>XO10012</td>
+                        <td>河南蓝火实业有限公司</td>
+                        <td>张三</td>
+                        <td>13565658989</td>
+                        <td>邓莹</td>
+                        <td>烟箔</td>
+                        <td>1235</td>
+                        <td>0.007</td>
+                        <td>500</td>
+                        <td>19800</td>
+                        <td>5t</td>
+                        <td>南京</td>
+                        <td>2天</td>
+                        <td>2分钟前</td>
+                        <td><span>3</span>条</td>
+                    </tr>
+                    <tr>
+                        <td>XO10012</td>
+                        <td>河南蓝火实业有限公司</td>
+                        <td>张三</td>
+                        <td>13565658989</td>
+                        <td>邓莹</td>
+                        <td>烟箔</td>
+                        <td>1235</td>
+                        <td>0.007</td>
+                        <td>500</td>
+                        <td>19800</td>
+                        <td>5t</td>
+                        <td>南京</td>
+                        <td>2天</td>
+                        <td>2分钟前</td>
+                        <td><span>3</span>条</td>
+                    </tr>
+                    <tr>
+                        <td>XO10012</td>
+                        <td>河南蓝火实业有限公司</td>
+                        <td>张三</td>
+                        <td>13565658989</td>
+                        <td>邓莹</td>
+                        <td>烟箔</td>
+                        <td>1235</td>
+                        <td>0.007</td>
+                        <td>500</td>
+                        <td>19800</td>
+                        <td>5t</td>
+                        <td>南京</td>
+                        <td>2天</td>
+                        <td>2分钟前</td>
+                        <td><span>3</span>条</td>
+                    </tr>
+                    <tr>
+                        <td>XO10012</td>
+                        <td>河南蓝火实业有限公司</td>
+                        <td>张三</td>
+                        <td>13565658989</td>
+                        <td>邓莹</td>
+                        <td>烟箔</td>
+                        <td>1235</td>
+                        <td>0.007</td>
+                        <td>500</td>
+                        <td>19800</td>
+                        <td>5t</td>
+                        <td>南京</td>
+                        <td>2天</td>
+                        <td>2分钟前</td>
+                        <td><span>3</span>条</td>
+                    </tr>
+                    <tr>
+                        <td>XO10012</td>
+                        <td>河南蓝火实业有限公司</td>
+                        <td>张三</td>
+                        <td>13565658989</td>
+                        <td>邓莹</td>
+                        <td>烟箔</td>
+                        <td>1235</td>
+                        <td>0.007</td>
+                        <td>500</td>
+                        <td>19800</td>
+                        <td>5t</td>
+                        <td>南京</td>
+                        <td>2天</td>
+                        <td>2分钟前</td>
+                        <td><span>3</span>条</td>
+                    </tr>
+                    <tr>
+                        <td>XO10012</td>
+                        <td>河南蓝火实业有限公司</td>
+                        <td>张三</td>
+                        <td>13565658989</td>
+                        <td>邓莹</td>
+                        <td>烟箔</td>
+                        <td>1235</td>
+                        <td>0.007</td>
+                        <td>500</td>
+                        <td>19800</td>
+                        <td>5t</td>
+                        <td>南京</td>
+                        <td>2天</td>
+                        <td>2分钟前</td>
+                        <td><span>3</span>条</td>
+                    </tr>
+                    <tr>
+                    	<td colspan="15" class="td">
+                            <div>
+                                <button type="button">上一页</button>
+                                <ul>
+                                    <li class="active">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                </ul>
+                                <button type="button">下一页</button>
+                                <button type="button">尾页</button>
+                                <p class="p">共<span>100</span>页</p>
+                                <p>转到第<input type="text" />页</p>
+                                <button type="button">GO</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p>抱歉，没有找到您需要的记录</p>
+        </div>
+    </div>
+</body>
+</html>
