@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*
+			{
+				margin: 0;
+				padding: 0;
+				font-size: 16px;
+			}
+			
+			body>.zd
+			{
+				width: 100%;
+			}
+			
+			body>.zd>.left
+			{
+				float: left;
+			}
+			
+			body>.zd>.left>ul
+			{
+				list-style: none;
+				width: 225px;
+				height: 100%;
+			}
+			
+			body>.zd>.left>ul>li
+			{
+				width: 100%;
+			}
+			
+			body>.zd>.left>ul>.logo
+			{
+				height: 75px;
+				background-repeat: no-repeat;
+				background-image: url(img/logo.png);
+				background-color: #0084b5;
+				background-position: 20px 10px;
+			}
+			
+			body>.zd>.left>ul>.btn
+			{
+				width: 225px;
+				height: 55px;
+				background-color: #394253;
+				font-size: 24px;
+				text-align: center;
+				line-height: 50px;
+				color: #FFFFFF;
+			}
+			
+			body>.zd>.left>ul>.xl-one
+			{
+				background-color: #22282e;
+				line-height: 55px;
+				color: #FFFFFF;
+			}
+			
+			body>.zd>.left>ul>.xl-one>.one
+			{
+				padding: 0 0 0 15px;
+			}
+			
+			body>.zd>.left>ul>.xl-one>.one>span
+			{
+				margin: 0 0 0 4px;
+				height: 55px;
+				background-color: #22282e;
+				font-size: 20px;
+				line-height: 55px;
+				color: #FFFFFF;
+			}
+			
+			body>.zd>.left>ul>.xl-one>ul
+			{
+				margin: -2px 0 0 0;
+				list-style: none;
+				background-color: #293239;
+			}
+			
+			body>.zd>.left>ul>.xl-one>ul>.on
+			{
+				background-color: #009acc;
+			}
+			
+			body>.zd>.left>ul>.xl-one>ul>li
+			{
+				padding: 0 0 0 15px;
+			}
+			
+			body>.zd>.left>ul>.xl-one>ul>li>.iconfont
+			{
+				font-size: 25px;
+			}
+			
+			body>.zd>.left>ul>.xl-one>ul>li>.zi
+			{
+				margin: 0 0 0 8px;
+			}
+			
+			body>.zd>.right
+			{
+				float: left;
+				width: 1678px;
+				background-color: #FFFFFF;
+			}
+			
+			body>.zd>.right>.top
+			{
+				list-style: none;
+				background-color: #009acc;
+				height: 75px;
+				color: #FFFFFF;
+				display: flex;
+			}
+			
+			body>.zd>.right>.top>li
+			{
+				text-align: center;
+				line-height: 75px;
+				flex: 1;
+			}
+			
+			body>.zd>.right>.top>.k
+			{
+				flex: 4;
+			}
+			
+			body>.zd>.right>.top>.on
+			{
+				background-color: #0084b5;
+			}
+			
+			body>.zd>.right>.top>.login
+			{
+				position: relative;
+				border-left:1px solid #0084b5;
+				border-right:1px solid #0084b5;
+			}
+			
+			body>.zd>.right>.top>.login:hover
+			{
+				background-color: #0084b5;
+				transition: .3s;
+			}
+			
+			body>.zd>.right>.mbx
+			{
+				margin: 0 0 0 20px;
+				height: 60px;
+				line-height: 60px;
+				list-style: none;
+			}
+			
+			body>.zd>.right>.mbx>.left
+			{
+				float: left;
+			}
+			
+			body>.zd>.right>.mbx>.right
+			{
+				float: right;
+			}
+			
+			body>.zd>.right>.mbx>.right>div
+			{
+				padding:0 10px 0 10px;
+				float: left;
+				line-height: 40px;
+				text-align: center;
+				height: 40px;
+				background-color: #53637c;
+				border-radius: 5px;
+				color: #ffffff;
+				margin: 10px 10px 0 0;
+			}
+			
+			body>.zd>.right>.mbx>li>.on
+			{
+				color: #0066cf;
+			}
+			
+			body>.zd>.right>.mbx>li>.on
+			{
+				color: #0066cf;
+			}
+			
+			
+			body>.zd>.right>.type
+			{
+				padding: 0 0 0 20px;
+				margin: 0 0 0 20px;
+				list-style: none;
+				background-color: #009acc;
+				height: 55px;
+				color: #FFFFFF;
+				display: flex;
+				line-height: 42px;
+			}
+			
+			body>.zd>.right>.type>li
+			{
+				position: relative;
+				text-align: center;
+				margin: 14px 0 0 10px;
+				width: 85px;
+				height: 42px;
+			}
+			
+			body>.zd>.right>.type>li>div
+			{
+				position: absolute;
+				top: 5px;
+				left: 70px;
+				width: 10px;
+				height: 10px;
+				background-color: red;
+				border-radius: 50%;
+			}
+			
+			body>.zd>.right>.type>.on
+			{
+				background-color: #FFFFFF;
+				color: #6e6e6e;
+			}
+			
+			
+			body>.zd>.right>.add
+			{
+				margin: 0 0 0 20px;
+				display: flex;
+				list-style: none;
+				height: 60px;
+			}
+			
+			body>.zd>.right>.add>li
+			{
+				margin: 14px 10px 0 0;
+				line-height: 36px;
+				padding: 0 10px 0 10px;
+				background-color: #e6e6e6;
+				height: 36px;
+				border-radius: 6px;
+				color: #a6a6a7;
+			}
+			
+			body>.zd>.right>.add>.sel
+			{
+				padding: 0;
+				background: none;
+			}
+			
+			body>.zd>.right>.add>.sel>select
+			{
+				width: 100%;
+				height: 100%;
+			}
+			
+			body>.zd>.right>.add>.on
+			{
+				background-color: #009acc;
+				color: #FFFFFF;
+			}
+			
+			body>.zd>.right>.sousuo
+			{
+				padding: 10px;
+				margin: 0 0 0 20px;
+				display: flex;
+				list-style: none;
+				background-color: #f3f3f5;
+			}
+			
+			body>.zd>.right>.sousuo>li
+			{
+				flex: 1;
+			}
+			
+			body>.zd>.right>.sousuo>li>div
+			{
+				margin: 10px 0 0 0;
+			}
+			
+			body>.zd>.right>.sousuo>li>div>input,
+			body>.zd>.right>.sousuo>li>div>select
+			{
+				padding: 0 0 0 10px;
+				width: 168px;
+				height: 35px;
+			}
+			
+			body>.zd>.right>.sousuo>.on>.bottom
+			{
+				text-align: center;
+				line-height: 35px;
+				width: 168px;
+				height: 35px;
+				background-color: #53637c;
+				border-radius: 5px;
+				color: #FFFFFF;
+			}
+			
+			body>.zd>.right>.nr
+			{
+				margin: 10px 0 0 20px;
+				border: 1px solid #e7e7ef;
+				width: 99%;
+			}
+			
+			body>.zd>.right>.nr>thead
+			{
+				background-color: #f3f3f5;
+			}
+			
+			body>.zd>.right>.nr>thead th
+			{
+				padding: 10px 20px;
+				height: 50px;
+				border: none;
+			}
+			
+			body>.zd>.right>.nr>tbody tr
+			{
+				height: 50px;
+			}
+			
+			body>.zd>.right>.nr>tbody tr td
+			{
+				border-bottom: 1px solid #e7e7ef;
+				text-align: center;
+			}
+			
+			body>.zd>.right>.nr>tbody tr>.one
+			{
+				color: #009acc;
+			}
+			
+			body>.zd>.right>.nr>tbody tr>.one>.pis
+			{
+				margin: 0 0 0 90px;
+				width: 60px;
+				text-align: center; 
+				border-radius: 10px; 
+				background-color: #009acc; 
+				color: #FFFFFF;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr
+			{
+				height: 100px;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>div
+			{
+				float: left;
+				text-align: center;
+				line-height: 35px;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>.up,
+			body>.zd>.right>.nr>tfoot>tr>td>.down,
+			body>.zd>.right>.nr>tfoot>tr>td>.foot,
+			body>.zd>.right>.nr>tfoot>tr>td>.go
+			{
+				margin: 0 0 0 10px;
+				width: 74px;
+				height: 35px;
+				border: 1px solid #bbbbbb;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>.page
+			{
+				margin: 0 10px 0 0;
+				float: left;
+				list-style: none;
+				display: flex;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>.page>li
+			{
+				margin: 0 0 0 10px;
+				text-align: center;
+				line-height: 35px;
+				width: 35px;
+				height: 35px;
+				border: 1px solid #bbbbbb;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>.page>li>a
+			{
+				color: #3e3e3e;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>.page>.on
+			{
+				background-color: #009acc;
+				border: 1px solid #009acc;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>.page>.on>a
+			{
+				color: #FFFFFF;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>.sum
+			{
+				margin: 0 0 0 20px;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>.a
+			{
+				margin: 0 0 0 20px;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>.a>input
+			{
+				text-align: center;
+				margin: 0 10px 0 10px;
+				width: 74px;
+			}
+			
+			body>.zd>.right>.nr>tfoot>tr>td>.k
+			{
+				width: 32%;
+				height: 1px;
+			}
+			
+			
+			#x
+			{
+				margin: 20px 0 0 0;
+				width: 100%;
+				text-align: center;
+				font-size: 24px;
+			}
+			
+			#login-xl
+			{
+				position: absolute;
+				top: 75px;
+				left: 0;
+				width: 168px;
+				list-style: none;
+				text-align: center;
+				background-color: #FFFFFF;
+				border: 1px solid #0084b5;
+				color: #000000;
+				display: none;
+			}
+			
+			#login-xl>li:hover
+			{
+				background-color: #009acc;
+				color: #FFFFFF;
+				transition: .3s;
+			}
+			
+			a
+			{
+				text-decoration:none;
+			}
+		</style>
+		
+		<link rel="stylesheet" href="font/iconfont.css">
+	</head>
+	<body>
+		<div class="zd">
+			<div class="left">
+				<ul>
+					<li class="logo"></li>
+					<li class="btn"><span class="iconfont icon-gengduo"></span></li>
+					<li class="xl-one">
+						<div class="one">
+							<span class="iconfont icon-xiala1"></span>
+							<span class="zi">&nbsp;&nbsp;撮合管理</span>
+						</div>
+						<ul>
+							<li class="on">
+								<span class="iconfont icon-dingdan"></span>
+								<span class="zi">需求池</span>
+							</li>
+							<li>
+								<span class="iconfont icon-caigoudingdan"></span>
+								<span class="zi">现货清单</span>
+							</li>
+							<li>
+								<span class="iconfont icon-lurupizhunwenhao"></span>
+								<span class="zi">录入产品</span>
+							</li>
+							<li>
+								<span class="iconfont icon-fasongwenjianfawen1300"></span>
+								<span class="zi">帮客户传EXCEL</span>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="xl-one">
+						<div class="one">
+							<span class="iconfont icon-xiala1"></span>
+							<span class="zi">&nbsp;&nbsp;订单管理</span>
+						</div>
+						<ul>
+							<li>
+								<span class="iconfont icon-dingdan"></span>
+								<span class="zi">预订单列表</span>
+							</li>
+							<li>
+								<span class="iconfont icon-caigoudingdan"></span>
+								<span class="zi">失效预订单</span>
+							</li>
+							<li>
+								<span class="iconfont icon-lurupizhunwenhao"></span>
+								<span class="zi">订单列表</span>
+							</li>
+							<li>
+								<span class="iconfont icon-fasongwenjianfawen1300"></span>
+								<span class="zi">查看凭证</span>
+							</li>
+							<li>
+								<span class="iconfont icon-fasongwenjianfawen1300"></span>
+								<span class="zi">自营订单列表</span>
+							</li>
+						</ul>
+					</li>
+					
+					<li class="xl-one">
+						<div class="one">
+							<span class="iconfont icon-xiala1"></span>
+							<span class="zi">&nbsp;&nbsp;统计报表</span>
+						</div>
+						<ul>
+							<li>
+								<span class="iconfont icon-dingdan"></span>
+								<span class="zi">业务统计</span>
+							</li>
+							<li>
+								<span class="iconfont icon-caigoudingdan"></span>
+								<span class="zi">客户成单统计</span>
+							</li>
+							<li>
+								<span class="iconfont icon-lurupizhunwenhao"></span>
+								<span class="zi">客户维护统计</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="right">
+				<ul class="top">
+					<li>云服务管理平台</li>
+					<li>
+						<soan class="iconfont icon-diannao"></soan>
+						个人工作台
+					</li>
+					<li class="on">
+						<soan class="iconfont icon-yewuchaxun"></soan>
+						业务运营支持
+					</li>
+					<li>
+						<soan class="iconfont icon-guanxi"></soan>
+						客户关系管理
+					</li>
+					<li class="k"></li>
+					<li class="login">
+						<soan class="iconfont icon-wode"></soan>
+						欢迎您：<span>snto</span>
+						<ul id="login-xl">
+							<li>个人资料</li>
+							<li>组织架构</li>
+							<li>权限分配</li>
+							<li>用户管理</li>
+						</ul>
+					</li>
+					<li>
+						<soan class="iconfont icon-tuichu"></soan>
+						退出登录
+					</li>
+				</ul>
+				
+				<ul class="mbx">
+					<li class="left">
+						<span class="on">BOSS</span>
+						<span>></span>
+						<span class="on">撮合管理</span>
+						<span>></span>
+						<span>需求池</span>
+					</li>
+					<li class="right">
+						<div>
+							<span class="iconfont icon-lurupizhunwenhao"></span>
+							录入产品
+						</div>
+						<div>
+							<span class="iconfont icon-lurupizhunwenhao"></span>
+							帮客户传EXCEL
+						</div>
+						<div>
+							<span class="iconfont icon-lurupizhunwenhao"></span>
+							订单列表
+						</div>
+						<div>
+							<span class="iconfont icon-lurupizhunwenhao"></span>
+							录入客户
+						</div>
+					</li>
+				</ul>
+					
+				<ul class="type">
+					<li class="on">
+						铝箔
+					</li>
+					<li>
+						铝锭
+						<div></div>
+					</li>
+					<li>
+						铝棒
+					</li>
+				</ul>
+				
+				<ul class="add">
+					<li class="sel">
+						<select>
+							<option value="">有效需求</option>
+						</select>
+					</li>
+					<li class="on">
+						<span class="iconfont icon-xinjian"></span>
+						新建
+					</li>
+					<li>
+						<span class="iconfont icon-bianji"></span>
+						编辑
+					</li>
+					<li>
+						<span class="iconfont icon-dustbin_icon"></span>
+						删除
+					</li>
+					<li>
+						<span class="iconfont icon-renyuanlianjietianjia"></span>
+						撮合匹配
+					</li>
+					<li class="on">
+						<span class="iconfont icon-caigoudingdan"></span>
+						生成预订单
+					</li>
+					<li>
+						<span class="iconfont icon-cuo"></span>
+						置为失效
+					</li>
+					<li>
+						<span class="iconfont icon-fasongwenjianfawen1300"></span>
+						导出
+					</li>
+				</ul>
+				
+				<ul class="sousuo">
+					<li>
+						<div class="top">
+							<input type="text" placeholder="需求编号">
+						</div>
+						<div class="bottom">
+							<input type="text" placeholder="价格">
+						</div>
+					</li>
+					<li>
+						<div class="top">
+							<input type="text" placeholder="公司名称">
+						</div>
+						<div class="bottom">
+							<input type="text" placeholder="数量">
+						</div>
+					</li>
+					<li>
+						<div class="top">
+							<input type="text" placeholder="联系人">
+						</div>
+						<div class="bottom">
+							<select>
+								<option value="">地区</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<div class="top">
+							<input type="text" placeholder="手机">
+						</div>
+						<div class="bottom">
+							<select>
+								<option value="">需求类型</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<div class="top">
+							<input type="text" placeholder="品名">
+						</div>
+						<div class="bottom">
+							<select>
+								<option value="">结算方式</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<div class="top">
+							<input type="text" placeholder="牌号">
+						</div>
+						<div class="bottom">
+							<select>
+								<option value="">交易方式</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<div class="top">
+							<input type="text" placeholder="宽度">
+						</div>
+						<div class="bottom">
+							<select>
+								<option value="">有效期</option>
+							</select>
+						</div>
+					</li>
+					<li class="on">
+						<div class="top">
+							<input type="text" placeholder="厚度">
+						</div>
+						<div class="bottom">
+							<span class="iconfont icon-sousuo"></span>
+							搜索
+						</div>
+					</li>
+				</ul>
+				
+				<table class="nr" cellpadding="0" cellspacing="0" >
+					<thead>
+						<th>需求编号</th>
+						<th>公司名称</th>
+						<th>联系人</th>
+						<th>手机</th>
+						<th>交易员</th>
+						<th>品名</th>
+						<th>牌号</th>
+						<th>厚度</th>
+						<th>宽度</th>
+						<th>价格</th>
+						<th>数量</th>
+						<th>地区</th>
+						<th>交期</th>
+						<th>发布时间</th>
+						<th>报价</th>
+					</thead>
+					<tbody>
+						<tr class="on">
+							<td class="one">XO10012</td>
+							<td>河南蓝火实业有限公司</td>
+							<td>张三</td>
+							<td>13565658989</td>
+							<td>邓盈</td>
+							<td>烟箔</td>
+							<td>1235</td>
+							<td>0.007</td>
+							<td>500</td>
+							<td>19800</td>
+							<td>5t</td>
+							<td>南京</td>
+							<td>2天</td>
+							<td>2分钟前</td>
+							<td>3条</td>
+						</tr>
+						<tr>
+							<td class="one">XO10012</td>
+							<td>河南蓝火实业有限公司</td>
+							<td>张三</td>
+							<td>13565658989</td>
+							<td>邓盈</td>
+							<td>烟箔</td>
+							<td>1235</td>
+							<td>0.007</td>
+							<td>500</td>
+							<td>19800</td>
+							<td>5t</td>
+							<td>南京</td>
+							<td>2天</td>
+							<td>2分钟前</td>
+							<td>3条</td>
+						</tr>
+						<tr>
+							<td class="one">XO10012</td>
+							<td>河南蓝火实业有限公司</td>
+							<td>张三</td>
+							<td>13565658989</td>
+							<td>邓盈</td>
+							<td>烟箔</td>
+							<td>1235</td>
+							<td>0.007</td>
+							<td>500</td>
+							<td>19800</td>
+							<td>5t</td>
+							<td>南京</td>
+							<td>2天</td>
+							<td>2分钟前</td>
+							<td>3条</td>
+						</tr>
+						<tr>
+							<td class="one">XO10012</td>
+							<td>河南蓝火实业有限公司</td>
+							<td>张三</td>
+							<td>13565658989</td>
+							<td>邓盈</td>
+							<td>烟箔</td>
+							<td>1235</td>
+							<td>0.007</td>
+							<td>500</td>
+							<td>19800</td>
+							<td>5t</td>
+							<td>南京</td>
+							<td>2天</td>
+							<td>2分钟前</td>
+							<td>3条</td>
+						</tr>
+						<tr>
+							<td class="one">XO10012</td>
+							<td>河南蓝火实业有限公司</td>
+							<td>张三</td>
+							<td>13565658989</td>
+							<td>邓盈</td>
+							<td>烟箔</td>
+							<td>1235</td>
+							<td>0.007</td>
+							<td>500</td>
+							<td>19800</td>
+							<td>5t</td>
+							<td>南京</td>
+							<td>2天</td>
+							<td>2分钟前</td>
+							<td>3条</td>
+						</tr>
+						<tr>
+							<td class="one">XO10012</td>
+							<td>河南蓝火实业有限公司</td>
+							<td>张三</td>
+							<td>13565658989</td>
+							<td>邓盈</td>
+							<td>烟箔</td>
+							<td>1235</td>
+							<td>0.007</td>
+							<td>500</td>
+							<td>19800</td>
+							<td>5t</td>
+							<td>南京</td>
+							<td>2天</td>
+							<td>2分钟前</td>
+							<td>3条</td>
+						</tr>
+						<tr>
+							<td class="one">XO10012</td>
+							<td>河南蓝火实业有限公司</td>
+							<td>张三</td>
+							<td>13565658989</td>
+							<td>邓盈</td>
+							<td>烟箔</td>
+							<td>1235</td>
+							<td>0.007</td>
+							<td>500</td>
+							<td>19800</td>
+							<td>5t</td>
+							<td>南京</td>
+							<td>2天</td>
+							<td>2分钟前</td>
+							<td>3条</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="15">
+								<div class="k"></div>
+								<div class="up">
+									<a href="#" style="color: #3e3e3e;">上一页</a>
+								</div>
+								<ul class="page">
+									<li class="on"><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+								</ul>
+								<div class="down">
+									<a href="#" style="color: #3e3e3e;">下一页</a>
+								</div>
+								<div class="foot">
+									<a href="#" style="color: #3e3e3e;">尾页</a>
+								</div>
+								<div class="sum">
+									共<span>100</span>页
+								</div>
+								<div class="a">
+									转到第<input type="text"/>页
+								</div>
+								<div class="go">
+									<a href="#" style="color: #3e3e3e;">GO</a>
+								</div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+				<div id="x">
+					抱歉，没找到您要的记录！
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			var btn=document.querySelector(".left>ul>.btn");
+			var logo=document.querySelector(".left>ul>.logo");
+			var left=document.querySelector(".left");
+			var rigth=document.querySelector(".right");
+			var sf="收"
+			
+			btn.onclick=function()
+			{
+				left.style.transition=".3s";
+				rigth.style.transition=".3s";
+				btn.style.transition=".3s";
+				if(sf=="收")
+				{
+					left.style.width="54px";
+					btn.style.width="54px";
+					logo.style="background-position: -5px 10px;";
+					rigth.style.width="1849px";
+					sf="放";
+				}
+				else
+				{
+					left.style.width="225px";
+					btn.style.width="225px";
+					logo.style="background-position: 20px 10px;";
+					rigth.style.width="1678px";
+					sf="收";
+				}
+			}
+			
+			var login=document.querySelector("body>.zd>.right>.top>.login");
+			var loginx=document.getElementById("login-xl");
+			
+			login.onclick=function()
+			{
+				if(sf=="收")
+				{
+					loginx.style.display="block";
+					sf="放";
+				}
+				else
+				{
+					loginx.style.display="none";
+					sf="收";
+				}
+			}
+		</script>
+	</body>
+</html>
